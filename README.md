@@ -45,14 +45,6 @@ No appsettings.json você deve configurar a seção:
 
 - Editar
 
-"Jwt": {
-  "Key": "SuaChaveSuperSecretaAqui",
-  
-  "Issuer": "https://localhost:5000",
-  
-  "Audience": "https://localhost:5000"
-}
-
 ### Observações
 Use o Swagger para testar os endpoints e gerar tokens JWT para autenticação.
 
