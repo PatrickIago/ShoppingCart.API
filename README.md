@@ -37,10 +37,20 @@ Ajuste a string de conexão no docker-compose.yml se necessário (senha do SQL S
 
 Execute o Docker Compose para subir a API e o banco SQL Server:
 
-bash
-Copiar
-Editar
-docker-compose up --build
+## Rodando o projeto com Docker
+
+### Requisitos
+
+- Docker instalado
+- Docker Compose instalado
+
+### Passos
+
+1. Ajuste a string de conexão no `docker-compose.yml` se necessário (senha do SQL Server etc).
+
+2. Execute o Docker Compose para subir a API e o banco SQL Server:
+   ```bash
+   docker-compose up --build
 A API ficará disponível em http://localhost:5000 (ou porta que você configurou).
 
 Acesse o Swagger para documentação e testes em:
@@ -119,4 +129,3 @@ A string de conexão padrão usa o container SQL Server no Docker.
 
 Contato
 Patrick Mendes — Mendespatrick720@gmail.com
-
