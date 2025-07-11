@@ -11,7 +11,6 @@ API para simular um carrinho de compras, com funcionalidades de gerenciamento de
 - Identity + JWT para autenticação
 - Docker & Docker Compose
 - AutoMapper
-- Serilog (para logging, se implementado)
 
 ## Funcionalidades
 
