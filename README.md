@@ -1,4 +1,3 @@
-# ShoppingCart.API
 # ShoppingCart API
 
 API para simular um carrinho de compras, com funcionalidades de gerenciamento de clientes, produtos, pedidos, carrinho e autenticação JWT.
