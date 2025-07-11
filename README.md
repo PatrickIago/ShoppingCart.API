@@ -51,63 +51,7 @@ Execute o Docker Compose para subir a API e o banco SQL Server:
 2. Execute o Docker Compose para subir a API e o banco SQL Server:
    ```bash
    docker-compose up --build
-A API ficará disponível em http://localhost:5000 (ou porta que você configurou).
-
-Acesse o Swagger para documentação e testes em:
-http://localhost:5000/swagger
-
-Endpoints Principais
-Autenticação
-POST /api/auth/register — Registra um novo usuário
-
-POST /api/auth/login — Realiza login e retorna token JWT
-
-Clientes
-GET /api/cliente — Lista clientes
-
-POST /api/cliente — Cria cliente
-
-GET /api/cliente/{id} — Consulta cliente por ID
-
-PUT /api/cliente/{id} — Atualiza cliente
-
-DELETE /api/cliente/{id} — Deleta cliente
-
-Produtos
-GET /api/produto — Lista produtos
-
-POST /api/produto — Cria produto (autenticado)
-
-GET /api/produto/{id} — Consulta produto
-
-PUT /api/produto/{id} — Atualiza produto
-
-DELETE /api/produto/{id} — Remove produto
-
-Carrinho
-GET /api/clientes/{clienteId}/carrinho — Obter carrinho do cliente
-
-POST /api/clientes/{clienteId}/carrinho/itens — Adicionar item
-
-PUT /api/clientes/{clienteId}/carrinho/itens/{produtoId} — Atualizar item
-
-DELETE /api/clientes/{clienteId}/carrinho/itens/{produtoId} — Remover item
-
-DELETE /api/clientes/{clienteId}/carrinho — Limpar carrinho
-
-Pedidos
-POST /api/clientes/{clienteId}/pedidos — Criar pedido a partir do carrinho
-
-GET /api/clientes/{clienteId}/pedidos — Histórico de pedidos
-
-GET /api/clientes/{clienteId}/pedidos/{pedidoId} — Detalhes do pedido
-
-Administração de Pedidos
-PATCH /api/admin/pedidos/{pedidoId}/pagar — Marcar pedido como pago
-
-PATCH /api/admin/pedidos/{pedidoId}/enviar — Marcar pedido como enviado
-
-PATCH /api/admin/pedidos/{pedidoId}/cancelar — Cancelar pedido
+A API ficará disponível em http://localhost:5000 
 
 Configuração do JWT
 No appsettings.json você deve configurar a seção:
