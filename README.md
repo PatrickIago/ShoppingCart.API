@@ -39,11 +39,11 @@ A API ficará disponível em http://localhost:5000
 Configuração do JWT
 No appsettings.json você deve configurar a seção:
 
-json
+- json
 
-Copiar
+- Copiar
 
-Editar
+- Editar
 
 "Jwt": {
   "Key": "SuaChaveSuperSecretaAqui",
