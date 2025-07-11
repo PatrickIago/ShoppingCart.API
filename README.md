@@ -40,20 +40,26 @@ Configuração do JWT
 No appsettings.json você deve configurar a seção:
 
 json
+
 Copiar
+
 Editar
+
 "Jwt": {
   "Key": "SuaChaveSuperSecretaAqui",
+  
   "Issuer": "https://localhost:5000",
+  
   "Audience": "https://localhost:5000"
 }
 
-Observações
+### Observações
 Use o Swagger para testar os endpoints e gerar tokens JWT para autenticação.
 
 As rotas que requerem autenticação têm o atributo [Authorize].
 
 A string de conexão padrão usa o container SQL Server no Docker.
 
-Contato
+### Contato
+
 Patrick Mendes — Mendespatrick720@gmail.com
