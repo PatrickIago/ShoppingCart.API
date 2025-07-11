@@ -29,23 +29,6 @@ API para simular um carrinho de compras, com funcionalidades de gerenciamento de
 
 ### Passos
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seuusuario/shoppingcart-api.git
-   cd shoppingcart-api
-Ajuste a string de conexão no docker-compose.yml se necessário (senha do SQL Server etc).
-
-Execute o Docker Compose para subir a API e o banco SQL Server:
-
-## Rodando o projeto com Docker
-
-### Requisitos
-
-- Docker instalado
-- Docker Compose instalado
-
-### Passos
-
 1. Ajuste a string de conexão no `docker-compose.yml` se necessário (senha do SQL Server etc).
 
 2. Execute o Docker Compose para subir a API e o banco SQL Server:
