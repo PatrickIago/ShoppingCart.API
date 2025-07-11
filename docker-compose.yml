@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  shoppingcart.api:
+    build:
+      context: .
+      dockerfile: ShoppingCart.Presentation/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=ShoppingCartDB;User=sa;Password=Your_password123;
+    networks:
+      - shoppingcart-network
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "Your_password123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - shoppingcart-network
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+
+networks:
+  shoppingcart-network:
+
+volumes:
+  sqlserverdata:
