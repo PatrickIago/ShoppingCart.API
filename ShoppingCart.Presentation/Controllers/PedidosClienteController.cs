@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ShoppingCart.Application.Dto.PedidoDtos;
 using ShoppingCart.Application.Interfaces;
 namespace ShoppingCart.API.Controllers;
@@ -7,6 +8,7 @@ namespace ShoppingCart.API.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/clientes/{clienteId}/pedidos")]
+[Authorize]
 public class PedidosClienteController : ControllerBase
 {
     private readonly IPedidoService _pedidoService;

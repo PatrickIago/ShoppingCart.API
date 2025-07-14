@@ -9,6 +9,7 @@ namespace ShoppingCart.API.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 
 public class ProdutoController : ControllerBase
 {

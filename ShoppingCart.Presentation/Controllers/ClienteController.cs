@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ShoppingCart.Application.Dto.ClienteDtos;
 using ShoppingCart.Application.Interfaces;
@@ -8,6 +9,7 @@ namespace ShoppingCart.API.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ClienteController : ControllerBase
 {
     private readonly IClienteService _clienteService;
