@@ -9,7 +9,7 @@ namespace ShoppingCart.API.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
+[Authorize] 
 public class ClienteController : ControllerBase
 {
     private readonly IClienteService _clienteService;

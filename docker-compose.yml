@@ -1,32 +1,48 @@
 version: '3.8'
 
 services:
+  # 1. Serviço da API
   shoppingcart.api:
     build:
-      context: .
+      context: . # Fica na raiz da solução (o ponto de partida)
+      # CAMINHO CORRIGIDO: Aponta para a pasta aninhada que contém o Dockerfile
       dockerfile: ShoppingCart.Presentation/Dockerfile
     ports:
       - "5000:8080"
+    
+    # GARANTIA DE ESPERA: A API só inicia quando o SQL Server estiver pronto
     depends_on:
-      - sqlserver
+      sqlserver:
+        condition: service_healthy 
+
     environment:
+      # Configuração para rodar em modo de desenvolvimento (habilita Swagger)
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=ShoppingCartDB;User=sa;Password=Your_password123;
+      # String de conexão usando o nome do serviço (sqlserver)
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=ShoppingCartDB;User=sa;Password=Your_password123;TrustServerCertificate=True;Encrypt=False
     networks:
       - shoppingcart-network
 
+  # 2. Serviço do Banco de Dados SQL Server
   sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: mcr.microsoft.com/mssql/server:2022-latest # Imagem oficial do SQL Server
     environment:
-      SA_PASSWORD: "Your_password123"
+      SA_PASSWORD: "Your_password123" # SENHA FORTE (Mantenha a mesma que na API)
       ACCEPT_EULA: "Y"
     ports:
-      - "1433:1433"
+      - "1433:1433" 
     networks:
       - shoppingcart-network
     volumes:
       - sqlserverdata:/var/opt/mssql
+      
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "Your_password123", "-Q", "select 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
 
+# Redes e Volumes
 networks:
   shoppingcart-network:
 

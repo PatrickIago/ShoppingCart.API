@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ShoppingCart.Application.Dto.EnderecoEntregaDtos;
 using ShoppingCart.Application.Interfaces;
@@ -8,7 +9,7 @@ namespace ShoppingCart.API.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
-// [Authorize] 
+[Authorize]
 public class EnderecoEntregaController : ControllerBase
 {
     private readonly IEnderecoEntregaService _enderecoService;

@@ -5,7 +5,7 @@ using ShoppingCart.Application.Dto.ProdutoDTOs;
 using ShoppingCart.Application.Interfaces;
 namespace ShoppingCart.API.Controllers;
 /// <summary>
-/// Controller para gerenciar os Produtos do catálogo.
+/// Controller para gerenciar os Produtos do catalogo.
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
