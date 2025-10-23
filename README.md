@@ -36,15 +36,6 @@ API para simular um carrinho de compras, com funcionalidades de gerenciamento de
    docker-compose up --build
 A API ficará disponível em http://localhost:5000 
 
-Configuração do JWT
-No appsettings.json você deve configurar a seção:
-
-- json
-
-- Copiar
-
-- Editar
-
 ### Observações
 Use o Swagger para testar os endpoints e gerar tokens JWT para autenticação.
 
