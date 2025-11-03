@@ -32,13 +32,10 @@ public class MappingProfile : Profile
         CreateMap<Carrinho, CarrinhoDto>()
             .ForMember(dest => dest.ValorTotal, opt => opt.MapFrom(src => src.CalcularValorTotal()));
 
-        // --- MAPEAMENTOS DO PEDIDO (NOVOS) ---
-
-        // 1. Ensina a converter um ItemPedido para o seu DTO
+        // --- Mapeamento de Pedidos ---
         CreateMap<ItemPedido, ItemPedidoDto>()
             .ForMember(dest => dest.NomeProduto, opt => opt.MapFrom(src => src.Produto.Nome));
 
-        // 2. Ensina a converter o Pedido principal para o seu DTO
         CreateMap<Pedido, PedidoDto>()
             .ForMember(dest => dest.StatusPedido, opt => opt.MapFrom(src => src.StatusPedido.ToString()));
     }
